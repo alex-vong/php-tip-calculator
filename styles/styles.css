@@ -1,0 +1,52 @@
+@import 'meyers-reset.css';
+@import 'reset.css';
+
+
+body {
+	font-family:  monaco;
+
+}
+
+h1 {
+	font-size:  40px;
+	padding:  20px;
+}
+
+
+label, input {
+	display:  block;
+	font-size:  20px;
+
+}
+
+input {
+	font-size:  18px;
+}
+
+label {
+	padding:  20px;
+}
+
+input {
+	margin:  0 20px;
+	padding:  5px;
+}
+
+button {
+	padding:  8px;
+	margin:  20px;
+	background-color: #2b9348;
+	color:  white;
+	font-size:  16px;
+}
+
+.total {
+	background-color: #d62828;
+	color:  white;
+	padding:  20px;
+}
+
+span {
+	font-weight: 900;
+	font-size:  18px;
+}
