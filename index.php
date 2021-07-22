@@ -8,7 +8,8 @@ if ( isset($_POST["submitted"]) ) {
 
 	if ( isset($_POST["bill"]) ) {
 		if ($_POST["bill"] >= 0 ) {
-			$bill = $_POST["bill"];
+			// $bill = $_POST["bill"];
+			$bill = number_format((float)$_POST["bill"], 2, '.', '');
 		}
 	}
 	if ( isset($_POST["tip"]) ) {
@@ -23,13 +24,11 @@ if ( isset($_POST["submitted"]) ) {
 		if ( $_POST["tip"] > 0  ) {
 			$tip = $_POST["tip"];
 			$tipAmount = (floatval($bill) * (floatval($tip / 100)) );
-
-			$tipWithDemicals = number_format((float)$tipAmount, 2, '.', '');
-
+			$tipAmount = number_format((float)$tipAmount, 2, '.', '');
 			$total = floatval($bill) + (floatval($bill) * (floatval($tip / 100)) );
 			$totalDecimal = number_format((float)$total, 2, '.', '');
 		}
-		echo "<p class='total'>" . "Your bill was " . "<span class='bold'>$" . $bill . "</span>" . " and you tipped " . "<span class='bold'>" . $tip . "%</span>" .  " or $" . $tipWithDemicals. ", which brings your total to " . "<span class='bold'>$" .$totalDecimal . "</span>" . "." . "</p>";
+		echo "<p class='total'>" . "Your bill was " . "<span class='bold'>$" . $bill . "</span>" . " and you tipped " . "<span class='bold'>" . $tip . "%</span>" .  " or $" . $tipAmount . ", which brings your total to " . "<span class='bold'>$" .$totalDecimal . "</span>" . "." . "</p>";
 	}
 
 }
