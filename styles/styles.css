@@ -1,4 +1,4 @@
-@import 'meyers-reset.css';
+/*@import 'meyers-reset.css';*/
 @import 'reset.css';
 
 
@@ -12,6 +12,10 @@ h1 {
 	padding:  20px;
 }
 
+.form-container {
+	padding:  20px 40px;
+	line-height: 1.4;
+}
 
 label, input {
 	display:  block;
@@ -49,4 +53,10 @@ button {
 span {
 	font-weight: 900;
 	font-size:  18px;
+}
+
+legend {
+    background-color: #000;
+    color: #fff;
+    padding: 3px 6px;
 }
