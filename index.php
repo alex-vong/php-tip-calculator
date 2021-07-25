@@ -28,7 +28,6 @@ if ( isset($_POST["submitted"]) ) {
 			$total = floatval($bill) + (floatval($bill) * (floatval($tip / 100)) );
 			$totalDecimal = number_format((float)$total, 2, '.', '');
 		}
-		echo "<p class='total'>" . "Your bill was " . "<span class='bold'>$" . $bill . "</span>" . " and you tipped " . "<span class='bold'>" . $tip . "%</span>" .  " or $" . $tipAmount . ", which brings your total to " . "<span class='bold'>$" .$totalDecimal . "</span>" . "." . "</p>";
 	}
 
 }
@@ -43,18 +42,23 @@ if ( isset($_POST["submitted"]) ) {
 	<div class="inner-column">
 		<h1>PHP Tip Calculator</h1>
 
+		<?php
+			if ( isset($_POST["submitted"]) ) { ?>
+	 		<p class="total">Your bill was <span>$<?=$bill?></span> and you tipped <span><?=$tip?>%</span>, or <span>$<?=$tipAmount?></span>, which brings your total to <span>$<?=$totalDecimal?></span></p>
+		<?php } ?>
+
 		<form method="POST">
+		
 			<label for="bill">How much was the bill?</label>
 			<input 
 				type="number" 
 				name="bill" 
 				id="bill" 
 				step="0.01" 
-				min= "0";
-				placeholder="Bill Amount in $";
+				min= "0"
+				placeholder= "$<?=$bill?>"
 			>
-		
-
+	
 		
 			<label for="tip">How much would you like to tip?</label>
 			<input 
@@ -62,9 +66,9 @@ if ( isset($_POST["submitted"]) ) {
 				name="tip" 
 				id ="tip" 
 				step="0.01"
-				min= "0"; 
-				required="" 
-				placeholder="% tip amount";
+				min= "0"
+				required
+				placeholder= "<?=$tip?>%"
 			>	
 			
 			<button type="submit" name="submitted"> Calculate Total</button>
