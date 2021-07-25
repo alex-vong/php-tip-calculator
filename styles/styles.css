@@ -1,4 +1,4 @@
-/*@import 'meyers-reset.css';*/
+@import 'meyers-reset.css';
 @import 'reset.css';
 
 
@@ -15,6 +15,7 @@ h1 {
 .form-container {
 	padding:  20px 40px;
 	line-height: 1.4;
+	
 }
 
 label, input {
@@ -23,16 +24,14 @@ label, input {
 
 }
 
-input {
-	font-size:  18px;
-}
 
 label {
-	padding:  20px;
+	padding:  20px 20px 5px;
 }
 
 input {
-	margin:  0 20px;
+	font-size:  18px;
+	margin:  0 20px 15px;
 	padding:  5px;
 }
 
@@ -45,18 +44,24 @@ button {
 }
 
 .total {
-	background-color: #d62828;
+	background-color: dodgerblue;
 	color:  white;
 	padding:  20px;
+	margin-left:  20px;
+		line-height: 1.5;
 }
 
 span {
 	font-weight: 900;
 	font-size:  18px;
+	/*text-decoration: underline;*/
+	border-bottom:  2px solid white;
+
 }
 
-legend {
-    background-color: #000;
-    color: #fff;
-    padding: 3px 6px;
+fieldset {
+	display:  inline-block;
+	border:  2px solid red;
+	padding:  20px;
 }
+
